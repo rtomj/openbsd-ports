@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#temp file   
+ver="1.6.2"
+url="https://movit.sesse.net/movit-$ver.tar.gz"
+
+wget $url
+tar zxf movit-$ver.tar.gz
+cd movit-$ver
+./autogen.sh
+gmake CC=egcc CXX=eg++
