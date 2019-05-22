@@ -12,4 +12,6 @@ url="https://github.com/jliljebl/flowblade/archive/v$ver.tar.gz"
 tar zxf v$ver.tar.gz 
 
 cd flowblade-$ver/flowblade-trunk
+#python2 flowblade
+
 #python setup.py install
