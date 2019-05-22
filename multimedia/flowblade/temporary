@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#temp file
+
+#deps: py-gtk2, py-dbus, mlt, sdl-image, frei0r-plugins, sox, swh-plugins,
+#			 py-gobject, pyobject3, py-numpy, py-Pillow, librsvg, dbus-glib, pango,
+#			 gdk-pixbuf, gtk+3, py-mlt
+ver=2.0
+url="https://github.com/jliljebl/flowblade/archive/v$ver.tar.gz"
+
+#wget $url
+tar zxf v$ver.tar.gz 
+
+cd flowblade-$ver/flowblade-trunk
+#python setup.py install
