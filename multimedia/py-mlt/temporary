@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#temp file
+
+#deps: pip2.7 install python-config, swig, mlt, gcc8, g++8
+
+# must be same as installed mlt
+ver=6.12.0
+url="https://github.com/mltframework/mlt/releases/download/v$ver/mlt-$ver.tar.gz"
+
+wget $url
+tar zxf mlt-$ver.tar.gz
+cd mlt-$ver/src/framework
+sed -i '36s/xlocale/locale/; 38s/char/void/' mlt_property.h
+cd ../swig/python
+sed -i '3s/g++/eg++/; 11s/python/python2/; 16s/python -c/python2 -c/; 29s/python-config/python2-config/' build
+./build
+#install mlt.py /usr/local/lib/python2.7/
+#install _mlt.so /usr/local/lib/python2.7
